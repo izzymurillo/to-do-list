@@ -1,13 +1,36 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { MantineProvider } from '@mantine/core';
+import '@fontsource/open-sans';
+import '@fontsource/poppins';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <MantineProvider 
+      withGlobalStyles 
+      withNormalizeCSS
+      theme={{
+        colorScheme: 'dark',
+        primaryColor: 'grape',
+        primaryShade: 6,
+        cursorType: 'pointer',
+        fontFamily: 'Open Sans, sans-serif',
+        headings: {
+          fontFamily: 'Poppins, sans-serif'
+        },
+        fontSizes: {
+          xs: 16,
+          sm: 18,
+          md: 20,
+          lg: 22,
+          xl: 24,
+        }
+      }}>
+      <App />
+    </MantineProvider>
   </React.StrictMode>
 );
 
